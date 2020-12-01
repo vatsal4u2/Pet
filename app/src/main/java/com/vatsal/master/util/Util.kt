@@ -2,6 +2,7 @@ package com.vatsal.master.util
 
 import android.content.Context
 import android.widget.ImageView
+import androidx.databinding.BindingAdapter
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -24,4 +25,9 @@ fun ImageView.loadImage(url : String?, progressDrawable: CircularProgressDrawabl
         .setDefaultRequestOptions(options)
         .load(url)
         .into(this)
+}
+
+@BindingAdapter("android:imageUrl")
+fun loadImage(imageView: ImageView, url: String?){
+    imageView.loadImage(url, getProgressDrawable(imageView.context))
 }
