@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Master</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="error_message">Error has occurred while loading data..</string>
+    <string name="name_ref">Dog</string>
+    <string name="lifeSpan_ref">LifeSpan</string>
+</resources>
