@@ -43,7 +43,6 @@ class ListFragment : Fragment() {
             refresh.isRefreshing = false
         }
         observeViewModel()
-
     }
 
     private fun observeViewModel(){

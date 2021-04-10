@@ -46,7 +46,7 @@ class DetailFragment : Fragment() {
     }
 
     private fun observerViewModel() {
-        vm.dogLiveData.observe(this, Observer { dog ->
+        vm.dogLiveData.observe(viewLifecycleOwner, Observer { dog ->
             dataBinding.dog = dog
         })
     }
