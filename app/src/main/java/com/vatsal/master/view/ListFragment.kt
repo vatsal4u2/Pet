@@ -47,20 +47,20 @@ class ListFragment : Fragment() {
     }
 
     private fun observeViewModel(){
-        vm.dogs.observe(this, Observer {dogs ->
+        vm.dogs.observe(viewLifecycleOwner, Observer {dogs ->
             dogs.let {
                 dogsList.visibility = View.VISIBLE
                 dogListAdapter.updateDogList(dogs as ArrayList<DogBreed>)
             }
         })
 
-        vm.loadingErrorMessage.observe(this, Observer { isError ->
+        vm.loadingErrorMessage.observe(viewLifecycleOwner, Observer { isError ->
             isError?.let {
                 listViewError.visibility = if(it) View.VISIBLE else View.GONE
             }
         })
 
-        vm.loading.observe(this, Observer {
+        vm.loading.observe(viewLifecycleOwner, Observer {
             it.let {
                 progressBar.visibility = if(it as Boolean) View.VISIBLE else View.GONE
                 if(it){
